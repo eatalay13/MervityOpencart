@@ -32,8 +32,8 @@
 					{% if menu.href %}
 						<li class="menu-item menu-item-active" aria-haspopup="true" id="{{ menu.id }}">
 							<a href="{{ menu.href }}" class="menu-link">
-								<span class="fa {{ menu.icon }} fw"></span>
-								{{ menu.name }}
+								<span class="svg-icon menu-icon {{ menu.icon }} fw"></span>
+								<span class="menu-text">{{ menu.name }}</span>		
 							</a>
 						</li>
 					{% else %}
@@ -41,7 +41,7 @@
 							{% set j = 0 %}
 							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 								<a href="javascript:;" class="menu-link menu-toggle">
-									<span class="fa {{ menu.icon }} fw"></span>
+									<span class="svg-icon menu-icon {{ menu.icon }} fw"></span>
 									<span class="menu-text">{{ menu.name }}</span>
 									<i class="menu-arrow"></i>
 								</a>
