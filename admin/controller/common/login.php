@@ -4,6 +4,7 @@ class ControllerCommonLogin extends Controller {
 
 	public function index() {
 		$this->load->language('common/login');
+		$this->load->language('common/footer');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -75,9 +76,6 @@ class ControllerCommonLogin extends Controller {
 		} else {
 			$data['forgotten'] = '';
 		}
-
-		$data['header'] = $this->load->controller('common/header');
-		$data['footer'] = $this->load->controller('common/footer');
 
 		$this->response->setOutput($this->load->view('common/login', $data));
 	}

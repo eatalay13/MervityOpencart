@@ -1,68 +1,191 @@
-<nav id="column-left">
-  <div id="navigation"><span class="fa fa-bars"></span> {{ text_navigation }}</div>
-  <ul id="menu">
-    {% set i = 0 %}
-    {% for menu in menus %}
-    <li id="{{ menu.id }}">{% if menu.href %}<a href="{{ menu.href }}"><i class="fa {{ menu.icon }} fw"></i> {{ menu.name }}</a>{% else %}<a href="#collapse{{ i }}" data-toggle="collapse" class="parent collapsed"><i class="fa {{ menu.icon }} fw"></i> {{ menu.name }}</a>{% endif %}
-        {% if menu.children %}
-          <ul id="collapse{{ i }}" class="collapse">
-            {% set j = 0 %}
-            {% for children_1 in menu.children %}
-              <li>{% if children_1.href %}
-                  <a href="{{ children_1.href }}">{{ children_1.name }}</a>
-                {% else %}
-                  <a href="#collapse{{ i }}-{{ j }}" data-toggle="collapse" class="parent collapsed">{{ children_1.name }}</a>
-                {% endif %}
-                {% if children_1.children %}
-                  <ul id="collapse{{ i }}-{{ j }}" class="collapse">
-                    {% set k = 0 %}
-                    {% for children_2 in children_1.children %}
-                      <li>{% if children_2.href %}
-                          <a href="{{ children_2.href }}">{{ children_2.name }}</a>
-                        {% else %}
-                          <a href="#collapse-{{ i }}-{{ j }}-{{ k }}" data-toggle="collapse" class="parent collapsed">{{ children_2.name }}</a>
-                        {% endif %}
-                        {% if children_2.children %}
-                          <ul id="collapse-{{ i }}-{{ j }}-{{ k }}" class="collapse">
-                            {% for children_3 in children_2.children %}
-                              <li><a href="{{ children_3.href }}">{{ children_3.name }}</a></li>
-                            {% endfor %}
-                          </ul>
-                        {% endif %}</li>
-                      {% set k = k + 1 %}
-                    {% endfor %}
-                  </ul>
-                {% endif %} </li>
-              {% set j = j + 1 %}
-            {% endfor %}
-          </ul>
-        {% endif %}
+<style>
+	#stats {
+		padding: 20px 20px 20px 0;
+		background: #343252;
+		color: white;
+		margin: 10px;
+	}
+</style>
 
-      
-      </li>
-    {% set i = i + 1 %}
-    {% endfor %}
-  </ul>
-  <div id="stats">
-    <ul>
-      <li>
-        <div>{{ text_complete_status }} <span class="pull-right">{{ complete_status }}%</span></div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ complete_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ complete_status }}%"> <span class="sr-only">{{ complete_status }}%</span></div>
-        </div>
-      </li>
-      <li>
-        <div>{{ text_processing_status }} <span class="pull-right">{{ processing_status }}%</span></div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ processing_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ processing_status }}%"> <span class="sr-only">{{ processing_status }}%</span></div>
-        </div>
-      </li>
-      <li>
-        <div>{{ text_other_status }} <span class="pull-right">{{ other_status }}%</span></div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ other_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ other_status }}%"> <span class="sr-only">{{ other_status }}%</span></div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
+	<div class="brand flex-column-auto" id="kt_brand">
+		<a href="/Admin" class="brand-logo">
+			<img alt="Logo" src="view/image/logo.png"/>
+		</a>
+		<button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+			<span class="svg-icon svg-icon svg-icon-xl">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewbox="0 0 24 24" version="1.1">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<polygon points="0 0 24 0 24 24 0 24"/>
+						<path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999)"/>
+						<path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999)"/>
+					</g>
+				</svg>
+			</span>
+		</button>
+	</div>
+	<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+		<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
+			<ul class="menu-nav">
+				{% set i = 0 %}
+				{% for menu in menus %}
+					{% if menu.href %}
+						<li class="menu-item menu-item-active" aria-haspopup="true" id="{{ menu.id }}">
+							<a href="{{ menu.href }}" class="menu-link">
+								<span class="fa {{ menu.icon }} fw"></span>
+								{{ menu.name }}
+							</a>
+						</li>
+					{% else %}
+						{% if menu.children %}
+							{% set j = 0 %}
+							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<a href="javascript:;" class="menu-link menu-toggle">
+									<span class="fa {{ menu.icon }} fw"></span>
+									<span class="menu-text">{{ menu.name }}</span>
+									<i class="menu-arrow"></i>
+								</a>
+								<div class="menu-submenu">
+									<i class="menu-arrow"></i>
+									<ul class="menu-subnav">
+										<li class="menu-item menu-item-parent" aria-haspopup="true">
+											<span class="menu-link">
+												<span class="menu-text">{{ menu.name }}</span>
+											</span>
+										</li>
+										{% for children_1 in menu.children %}
+											{% if children_1.href %}
+												<li class="menu-item" aria-haspopup="true">
+													<a href="{{ children_1.href }}" class="menu-link">
+														<i class="menu-bullet menu-bullet-line">
+															<span></span>
+														</i>
+														<span class="menu-text">{{children_1.name}}</span>
+													</a>
+												</li>
+											{% else %}
+												<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+													<a href="javascript:;" class="menu-link menu-toggle">
+														<i class="menu-bullet menu-bullet-line">
+															<span></span>
+														</i>
+														<span class="menu-text">{{children_1.name}}</span>
+														<i class="menu-arrow"></i>
+													</a>
+													<div class="menu-submenu">
+														<i class="menu-arrow"></i>
+														<ul class="menu-subnav">
+															{% set k = 0 %}
+															{% for children_2 in children_1.children %}
+																{% if children_2.href %}
+																	<li class="menu-item" aria-haspopup="true">
+																		<a href="{{ children_2.href }}" class="menu-link">
+																			<i class="menu-bullet menu-bullet-dot">
+																				<span></span>
+																			</i>
+																			<span class="menu-text">{{ children_2.name }}</span>
+																		</a>
+																	</li>
+																{% else %}
+																	<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+																		<a href="javascript:;" class="menu-link menu-toggle">
+																			<i class="menu-bullet menu-bullet-line">
+																				<span></span>
+																			</i>
+																			<span class="menu-text">{{children_2.name}}</span>
+																			<i class="menu-arrow"></i>
+																		</a>
+																		<div class="menu-submenu">
+																			<i class="menu-arrow"></i>
+																			<ul class="menu-subnav">
+																				{% for children_3 in children_2.children %}
+																					<li class="menu-item" aria-haspopup="true">
+																						<a href="{{ children_3.href }}" class="menu-link">
+																							<i class="menu-bullet menu-bullet-dot">
+																								<span></span>
+																							</i>
+																							<span class="menu-text">{{ children_3.name }}</span>
+																						</a>
+																					</li>
+																				{% endfor %}
+																			</ul>
+																		</div>
+																	</li>
+																{% endif %}
+																{% set k = k + 1 %}
+															{% endfor %}
+														</ul>
+													</div>
+												</li>
+											{% endif %}
+											{% set j = j + 1 %}
+										{% endfor %}
+									</ul>
+								</div>
+							</li>
+						{% endif %}
+					{% endif %}
+					{% set i = i + 1 %}
+				{% endfor %}
+				<li>
+					<div id="stats">
+						<ul>
+							<li>
+								<div>{{ text_complete_status }}
+									<span class="pull-right">{{ complete_status }}%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ complete_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ complete_status }}%">
+										<span class="sr-only">{{ complete_status }}%</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div>{{ text_processing_status }}
+									<span class="pull-right">{{ processing_status }}%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ processing_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ processing_status }}%">
+										<span class="sr-only">{{ processing_status }}%</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div>{{ text_other_status }}
+									<span class="pull-right">{{ other_status }}%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ other_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ other_status }}%">
+										<span class="sr-only">{{ other_status }}%</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+	<div id="kt_header" class="header header-fixed">
+		<div class="container-fluid d-flex align-items-stretch justify-content-between">
+			<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+				<div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default"></div>
+			</div>
+			<div class="topbar">
+				<div class="topbar-item">
+					<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
+						<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Merhaba,</span>
+						<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Emrah</span>
+						<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
+							<span class="symbol-label font-size-h5 font-weight-bold">E</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+		<div class="d-flex flex-column-fluid">
+			<div class="container">
