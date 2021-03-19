@@ -24,6 +24,21 @@
 	</div>
 </div>
 
+{% if error_warning %}
+	<div class="alert alert-danger alert-dismissible">
+		<span class="fa fa-exclamation-circle"></span>
+		{{ error_warning }}
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	</div>
+{% endif %}
+{% if success %}
+	<div class="alert alert-success alert-dismissible">
+		<span class="fa fa-check-circle"></span>
+		{{ success }}
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	</div>
+{% endif %}
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="card card-custom gutter-b example example-compact">
@@ -33,21 +48,6 @@
 				</h3>
 			</div>
 			<div class="card-body">
-				{% if error_warning %}
-					<div class="alert alert-danger alert-dismissible">
-						<i class="fa fa-exclamation-circle"></i>
-						{{ error_warning }}
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-					</div>
-				{% endif %}
-				{% if success %}
-					<div class="alert alert-success alert-dismissible">
-						<i class="fa fa-check-circle"></i>
-						{{ success }}
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-					</div>
-				{% endif %}
-
 				<form action="{{ delete }}" method="post" enctype="multipart/form-data" id="form-store">
 					<div class="table-responsive">
 						<table class="table table-bordered">

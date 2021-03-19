@@ -6,16 +6,17 @@
     </div>
     <div class="modal-body">
       <div class="row">
-        <div class="col-sm-5"><a href="{{ parent }}" data-toggle="tooltip" title="{{ button_parent }}" id="button-parent" class="btn btn-default"><i class="fa fa-level-up"></i></a> <a href="{{ refresh }}" data-toggle="tooltip" title="{{ button_refresh }}" id="button-refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
-          <button type="button" data-toggle="tooltip" title="{{ button_upload }}" id="button-upload" class="btn btn-primary"><i class="fa fa-upload"></i></button>
-          <button type="button" data-toggle="tooltip" title="{{ button_folder }}" id="button-folder" class="btn btn-default"><i class="fa fa-folder"></i></button>
-          <button type="button" data-toggle="tooltip" title="{{ button_delete }}" id="button-delete" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+        <div class="col-sm-5"><a href="{{ parent }}" data-toggle="tooltip" title="{{ button_parent }}" id="button-parent" class="btn btn-icon btn-sm btn-default"><span class="fas fa-level-up-alt"></span></a>
+		<a href="{{ refresh }}" data-toggle="tooltip" title="{{ button_refresh }}" id="button-refresh" class="btn btn-icon btn-sm btn-default"><span class="fas fa-sync"></span></a>
+          <button type="button" data-toggle="tooltip" title="{{ button_upload }}" id="button-upload" class="btn btn-icon btn-sm btn-primary"><span class="fa fa-upload"></span></button>
+          <button type="button" data-toggle="tooltip" title="{{ button_folder }}" id="button-folder" class="btn btn-icon btn-sm btn-default"><span class="fa fa-folder"></span></button>
+          <button type="button" data-toggle="tooltip" title="{{ button_delete }}" id="button-delete" class="btn btn-icon btn-sm btn-danger"><span class="fas fa-trash"></span></button>
         </div>
         <div class="col-sm-7">
           <div class="input-group">
             <input type="text" name="search" value="{{ filter_name }}" placeholder="{{ entry_search }}" class="form-control">
             <span class="input-group-btn">
-            <button type="button" data-toggle="tooltip" title="{{ button_search }}" id="button-search" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            <button type="button" data-toggle="tooltip" title="{{ button_search }}" id="button-search" class="btn btn-icon btn-square btn-primary"><span class="fa fa-search"></span></button>
             </span></div>
         </div>
       </div>
