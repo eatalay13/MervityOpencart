@@ -8,6 +8,8 @@ class ControllerCommonFooter extends Controller {
 		} else {
 			$data['text_version'] = '';
 		}
+
+		$data['right_panel'] = $this->load->controller('common/right_panel');
 		
 		return $this->load->view('common/footer', $data);
 	}
