@@ -127,7 +127,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="tab-store" role="tabpanel" aria-labelledby="store-tab">
+						<div class="tab-pane fade" id="tab-store" role="tabpanel">
 							<div class="form-group required">
 								<label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
 								<div class="col-sm-10">
@@ -191,8 +191,8 @@
 								<label class="col-sm-2 control-label" for="input-image">{{ entry_image }}</label>
 								<div class="col-sm-10">
 									<a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-                  <img src="{{ thumb }}" alt="" title="" data-placeholder="{{ placeholder }}"/>
-                  </a>
+										<img src="{{ thumb }}" alt="" title="" data-placeholder="{{ placeholder }}"/>
+									</a>
 									<input type="hidden" name="config_image" value="{{ config_image }}" id="input-image"/>
 								</div>
 							</div>
@@ -235,7 +235,7 @@
 								</div>
 							{% endif %}
 						</div>
-						<div class="tab-pane" id="tab-local" role="tabpanel" aria-labelledby="local-tab">
+						<div class="tab-pane fade" id="tab-local" role="tabpanel">
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="input-country">{{ entry_country }}</label>
 								<div class="col-sm-10">
@@ -385,7 +385,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="tab-option" role="tabpanel" aria-labelledby="option-tab">
+						<div class="tab-pane fade" id="tab-option" role="tabpanel">
 							<fieldset>
 								<legend>{{ text_product }}</legend>
 								<div class="form-group">
@@ -438,30 +438,30 @@
 										<span data-toggle="tooltip" title="{{ help_review }}">{{ entry_review }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_review_status %}
-												<input type="radio" name="config_review_status" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_review_status" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_review_status %}
-												<input type="radio" name="config_review_status" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_review_status" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_review_status %}
+													<input type="radio" name="config_review_status" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_review_status" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_review_status %}
+													<input type="radio" name="config_review_status" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_review_status" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -469,30 +469,30 @@
 										<span data-toggle="tooltip" title="{{ help_review_guest }}">{{ entry_review_guest }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_review_guest %}
-												<input type="radio" name="config_review_guest" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_review_guest" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_review_guest %}
-												<input type="radio" name="config_review_guest" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_review_guest" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_review_guest %}
+													<input type="radio" name="config_review_guest" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_review_guest" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_review_guest %}
+													<input type="radio" name="config_review_guest" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_review_guest" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 							</fieldset>
@@ -526,30 +526,30 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">{{ entry_tax }}</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_tax %}
-												<input type="radio" name="config_tax" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_tax" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_tax %}
-												<input type="radio" name="config_tax" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_tax" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_tax %}
+													<input type="radio" name="config_tax" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_tax" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_tax %}
+													<input type="radio" name="config_tax" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_tax" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -620,30 +620,30 @@
 										<span data-toggle="tooltip" title="{{ help_customer_online }}">{{ entry_customer_online }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_customer_online %}
-												<input type="radio" name="config_customer_online" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_customer_online" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_customer_online %}
-												<input type="radio" name="config_customer_online" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_customer_online" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_customer_online %}
+													<input type="radio" name="config_customer_online" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_customer_online" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_customer_online %}
+													<input type="radio" name="config_customer_online" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_customer_online" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -651,59 +651,59 @@
 										<span data-toggle="tooltip" title="{{ help_customer_activity }}">{{ entry_customer_activity }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_customer_activity %}
-												<input type="radio" name="config_customer_activity" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_customer_activity" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_customer_activity %}
-												<input type="radio" name="config_customer_activity" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_customer_activity" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_customer_activity %}
+													<input type="radio" name="config_customer_activity" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_customer_activity" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_customer_activity %}
+													<input type="radio" name="config_customer_activity" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_customer_activity" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">{{ entry_customer_search }}</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_customer_search %}
-												<input type="radio" name="config_customer_search" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_customer_search" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_customer_search %}
-												<input type="radio" name="config_customer_search" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_customer_search" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_customer_search %}
+													<input type="radio" name="config_customer_search" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_customer_search" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_customer_search %}
+													<input type="radio" name="config_customer_search" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_customer_search" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -756,30 +756,30 @@
 										<span data-toggle="tooltip" title="{{ help_customer_price }}">{{ entry_customer_price }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_customer_price %}
-												<input type="radio" name="config_customer_price" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_customer_price" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_customer_price %}
-												<input type="radio" name="config_customer_price" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_customer_price" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_customer_price %}
+													<input type="radio" name="config_customer_price" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_customer_price" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_customer_price %}
+													<input type="radio" name="config_customer_price" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_customer_price" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -832,30 +832,30 @@
 										<span data-toggle="tooltip" title="{{ help_cart_weight }}">{{ entry_cart_weight }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_cart_weight %}
-												<input type="radio" name="config_cart_weight" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_cart_weight" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_cart_weight %}
-												<input type="radio" name="config_cart_weight" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_cart_weight" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_cart_weight %}
+													<input type="radio" name="config_cart_weight" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_cart_weight" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_cart_weight %}
+													<input type="radio" name="config_cart_weight" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_cart_weight" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -863,30 +863,30 @@
 										<span data-toggle="tooltip" title="{{ help_checkout_guest }}">{{ entry_checkout_guest }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_checkout_guest %}
-												<input type="radio" name="config_checkout_guest" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_checkout_guest" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_checkout_guest %}
-												<input type="radio" name="config_checkout_guest" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_checkout_guest" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_checkout_guest %}
+													<input type="radio" name="config_checkout_guest" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_checkout_guest" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_checkout_guest %}
+													<input type="radio" name="config_checkout_guest" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_checkout_guest" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1037,30 +1037,30 @@
 										<span data-toggle="tooltip" title="{{ help_stock_display }}">{{ entry_stock_display }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_stock_display %}
-												<input type="radio" name="config_stock_display" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_stock_display" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_stock_display %}
-												<input type="radio" name="config_stock_display" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_stock_display" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_stock_display %}
+													<input type="radio" name="config_stock_display" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_stock_display" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_stock_display %}
+													<input type="radio" name="config_stock_display" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_stock_display" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1068,30 +1068,30 @@
 										<span data-toggle="tooltip" title="{{ help_stock_warning }}">{{ entry_stock_warning }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_stock_warning %}
-												<input type="radio" name="config_stock_warning" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_stock_warning" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_stock_warning %}
-												<input type="radio" name="config_stock_warning" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_stock_warning" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_stock_warning %}
+													<input type="radio" name="config_stock_warning" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_stock_warning" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_stock_warning %}
+													<input type="radio" name="config_stock_warning" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_stock_warning" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1099,30 +1099,30 @@
 										<span data-toggle="tooltip" title="{{ help_stock_checkout }}">{{ entry_stock_checkout }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_stock_checkout %}
-												<input type="radio" name="config_stock_checkout" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_stock_checkout" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_stock_checkout %}
-												<input type="radio" name="config_stock_checkout" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_stock_checkout" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_stock_checkout %}
+													<input type="radio" name="config_stock_checkout" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_stock_checkout" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_stock_checkout %}
+													<input type="radio" name="config_stock_checkout" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_stock_checkout" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 							</fieldset>
@@ -1153,30 +1153,30 @@
 										<span data-toggle="tooltip" title="{{ help_affiliate_approval }}">{{ entry_affiliate_approval }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_affiliate_approval %}
-												<input type="radio" name="config_affiliate_approval" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_affiliate_approval" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_affiliate_approval %}
-												<input type="radio" name="config_affiliate_approval" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_affiliate_approval" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_affiliate_approval %}
+													<input type="radio" name="config_affiliate_approval" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_affiliate_approval" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_affiliate_approval %}
+													<input type="radio" name="config_affiliate_approval" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_affiliate_approval" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1184,30 +1184,30 @@
 										<span data-toggle="tooltip" title="{{ help_affiliate_auto }}">{{ entry_affiliate_auto }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_affiliate_auto %}
-												<input type="radio" name="config_affiliate_auto" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_affiliate_auto" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_affiliate_auto %}
-												<input type="radio" name="config_affiliate_auto" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_affiliate_auto" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_affiliate_auto %}
+													<input type="radio" name="config_affiliate_auto" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_affiliate_auto" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_affiliate_auto %}
+													<input type="radio" name="config_affiliate_auto" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_affiliate_auto" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1337,7 +1337,7 @@
 								</div>
 							</fieldset>
 						</div>
-						<div class="tab-pane" id="tab-image" role="tabpanel" aria-labelledby="image-tab">
+						<div class="tab-pane fade" id="tab-image" role="tabpanel">
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="input-logo">{{ entry_logo }}</label>
 								<div class="col-sm-10">
@@ -1355,7 +1355,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="tab-mail" role="tabpanel" aria-labelledby="mail-tab">
+						<div class="tab-pane fade" id="tab-mail" role="tabpanel">
 							<fieldset>
 								<legend>{{ text_general }}</legend>
 								<div class="form-group">
@@ -1464,7 +1464,7 @@
 								</div>
 							</fieldset>
 						</div>
-						<div class="tab-pane" id="tab-server" role="tabpanel" aria-labelledby="server-tab">
+						<div class="tab-pane fade" id="tab-server" role="tabpanel">
 							<fieldset>
 								<legend>{{ text_general }}</legend>
 								<div class="form-group">
@@ -1472,30 +1472,30 @@
 										<span data-toggle="tooltip" title="{{ help_maintenance }}">{{ entry_maintenance }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_maintenance %}
-												<input type="radio" name="config_maintenance" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_maintenance" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_maintenance %}
-												<input type="radio" name="config_maintenance" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_maintenance" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_maintenance %}
+													<input type="radio" name="config_maintenance" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_maintenance" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_maintenance %}
+													<input type="radio" name="config_maintenance" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_maintenance" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1503,30 +1503,30 @@
 										<span data-toggle="tooltip" title="{{ help_seo_url }}">{{ entry_seo_url }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_seo_url %}
-												<input type="radio" name="config_seo_url" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_seo_url" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_seo_url %}
-												<input type="radio" name="config_seo_url" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_seo_url" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_seo_url %}
+													<input type="radio" name="config_seo_url" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_seo_url" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_seo_url %}
+													<input type="radio" name="config_seo_url" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_seo_url" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1553,30 +1553,30 @@
 										<span data-toggle="tooltip" title="{{ help_secure }}">{{ entry_secure }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_secure %}
-												<input type="radio" name="config_secure" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_secure" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_secure %}
-												<input type="radio" name="config_secure" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_secure" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_secure %}
+													<input type="radio" name="config_secure" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_secure" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_secure %}
+													<input type="radio" name="config_secure" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_secure" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1584,30 +1584,30 @@
 										<span data-toggle="tooltip" title="{{ help_password }}">{{ entry_password }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_password %}
-												<input type="radio" name="config_password" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_password" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_password %}
-												<input type="radio" name="config_password" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_password" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_password %}
+													<input type="radio" name="config_password" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_password" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_password %}
+													<input type="radio" name="config_password" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_password" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1615,30 +1615,30 @@
 										<span data-toggle="tooltip" title="{{ help_shared }}">{{ entry_shared }}</span>
 									</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_shared %}
-												<input type="radio" name="config_shared" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_shared" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_shared %}
-												<input type="radio" name="config_shared" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_shared" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_shared %}
+													<input type="radio" name="config_shared" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_shared" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_shared %}
+													<input type="radio" name="config_shared" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_shared" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -1685,59 +1685,59 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">{{ entry_error_display }}</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_error_display %}
-												<input type="radio" name="config_error_display" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_error_display" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_error_display %}
-												<input type="radio" name="config_error_display" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_error_display" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_error_display %}
+													<input type="radio" name="config_error_display" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_error_display" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_error_display %}
+													<input type="radio" name="config_error_display" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_error_display" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">{{ entry_error_log }}</label>
 									<div class="col-sm-10">
-                  <div class="radio-inline">
-										<label class="radio">
-											{% if config_error_log %}
-												<input type="radio" name="config_error_log" value="1" checked="checked"/>
-												<span></span>
-												{{ text_yes }}
-											{% else %}
-												<input type="radio" name="config_error_log" value="1"/>
-												<span></span>
-												{{ text_yes }}
-											{% endif %}
-										</label>
-										<label class="radio">
-											{% if not config_error_log %}
-												<input type="radio" name="config_error_log" value="0" checked="checked"/>
-												<span></span>
-												{{ text_no }}
-											{% else %}
-												<input type="radio" name="config_error_log" value="0"/>
-												<span></span>
-												{{ text_no }}
-											{% endif %}
-										</label>
-									</div>
+										<div class="radio-inline">
+											<label class="radio">
+												{% if config_error_log %}
+													<input type="radio" name="config_error_log" value="1" checked="checked"/>
+													<span></span>
+													{{ text_yes }}
+												{% else %}
+													<input type="radio" name="config_error_log" value="1"/>
+													<span></span>
+													{{ text_yes }}
+												{% endif %}
+											</label>
+											<label class="radio">
+												{% if not config_error_log %}
+													<input type="radio" name="config_error_log" value="0" checked="checked"/>
+													<span></span>
+													{{ text_no }}
+												{% else %}
+													<input type="radio" name="config_error_log" value="0"/>
+													<span></span>
+													{{ text_no }}
+												{% endif %}
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group required">
