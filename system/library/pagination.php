@@ -46,15 +46,16 @@ class Pagination {
 
 		$this->url = str_replace('%7Bpage%7D', '{page}', $this->url);
 
-		$output = '<ul class="pagination">';
+		$output = '<div class="d-flex justify-content-between align-items-center flex-wrap">
+		<div class="d-flex flex-wrap py-2 mr-3">';
 
 		if ($page > 1) {
-			$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+			$output .= '<a class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a>';
 			
 			if ($page - 1 === 1) {
-				$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+				$output .= '<a class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a>';
 			} else {
-				$output .= '<li><a href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
+				$output .= '<a class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a>';
 			}
 		}
 
@@ -79,23 +80,23 @@ class Pagination {
 
 			for ($i = $start; $i <= $end; $i++) {
 				if ($page == $i) {
-					$output .= '<li class="active"><span>' . $i . '</span></li>';
+					$output .= '<a href="#" class="btn btn-icon btn-sm border-0 btn-hover-primary active mr-2 my-1"><span>' . $i . '</span></a>';
 				} else {
 					if ($i === 1) {
-						$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+						$output .= '<a class="btn btn-icon btn-sm border-0 btn-hover-primary mr-2 my-1" href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a>';
 					} else {
-						$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+						$output .= '<a class="btn btn-icon btn-sm border-0 btn-hover-primary mr-2 my-1" href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a>';
 					}
 				}
 			}
 		}
 
 		if ($page < $num_pages) {
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
+			$output .= '<a class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a>';
+			$output .= '<a class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a>';
 		}
 
-		$output .= '</ul>';
+		$output .= '</div></div>';
 
 		if ($num_pages > 1) {
 			return $output;
