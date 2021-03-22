@@ -47,15 +47,15 @@ $('#button-setting').on('click', function() {
 		url: 'index.php?route=common/developer&user_token={{ user_token }}',
 		dataType: 'html',
 		beforeSend: function() {
-			$('#button-setting').button('loading');
+			$('#button-setting').attr("disabled", true);
 		},
 		complete: function() {
-			$('#button-setting').button('reset');
+			$('#button-setting').removeAttr("disabled");
 		},
 		success: function(html) {
 			$('#modal-developer').remove();
 			
-			$('body').prepend('<div id="modal-developer" class="modal">' + html + '</div>');
+			$('body').prepend('<div class="modal fade" role="dialog" aria-hidden="true" id="modal-developer">' + html + '</div>');
 			
 			$('#modal-developer').modal('show');
 		},
