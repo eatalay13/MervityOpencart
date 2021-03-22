@@ -33,7 +33,7 @@
 						<li class="menu-item menu-item-active" aria-haspopup="true" id="{{ menu.id }}">
 							<a href="{{ menu.href }}" class="menu-link">
 								<span class="svg-icon menu-icon {{ menu.icon }} fw"></span>
-								<span class="menu-text">{{ menu.name }}</span>		
+								<span class="menu-text">{{ menu.name }}</span>
 							</a>
 						</li>
 					{% else %}
@@ -131,31 +131,31 @@
 					<div id="stats">
 						<ul>
 							<li>
-								<div>{{ text_complete_status }}
+								<div style="font-size: smaller;">{{ text_complete_status }}
 									<span class="pull-right">{{ complete_status }}%</span>
 								</div>
-								<div class="progress">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ complete_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ complete_status }}%">
+								<div class="progress" style="height: 5px;">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ complete_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ complete_status }}%">
 										<span class="sr-only">{{ complete_status }}%</span>
 									</div>
 								</div>
 							</li>
 							<li>
-								<div>{{ text_processing_status }}
+								<div style="font-size: smaller;">{{ text_processing_status }}
 									<span class="pull-right">{{ processing_status }}%</span>
 								</div>
-								<div class="progress">
-									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ processing_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ processing_status }}%">
+								<div class="progress" style="height: 5px;">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ processing_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ processing_status }}%">
 										<span class="sr-only">{{ processing_status }}%</span>
 									</div>
 								</div>
 							</li>
 							<li>
-								<div>{{ text_other_status }}
+								<div style="font-size: smaller;">{{ text_other_status }}
 									<span class="pull-right">{{ other_status }}%</span>
 								</div>
-								<div class="progress">
-									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ other_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ other_status }}%">
+								<div class="progress" style="height: 5px;">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ other_status }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ other_status }}%">
 										<span class="sr-only">{{ other_status }}%</span>
 									</div>
 								</div>
