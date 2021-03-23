@@ -76,17 +76,17 @@ $(document).ready(function () {
 	});
 
 	if (!sessionStorage.getItem('menu')) {
-		$('#menu #dashboard').addClass('active');
+		$('#menu #menu-dashboard').addClass('menu-item-active');
 	} else {
 		// Sets active and open to selected page in the left column menu.
-		$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parent().addClass('active');
+		$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parent().addClass('menu-item-active');
 	}
 
-	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li > a').removeClass('collapsed');
+/* 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li > a').removeClass('menu-item-open');
 
-	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('ul').addClass('in');
+	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('ul').addClass('in'); */
 
-	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li').addClass('active');
+	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li').addClass('menu-item-open');
 
 	// Image Manager
 	$(document).on('click', 'a[data-toggle=\'image\']', function (e) {
