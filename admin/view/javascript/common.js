@@ -23,6 +23,13 @@ function getURLVar(key) {
 }
 
 $(document).ready(function () {
+	$('.date').children("input").datepicker({
+		todayHighlight: true,
+		orientation: "bottom left",
+		locale: "tr"
+	});
+
+
 	//Form Submit for IE Browser
 	$('button[type=\'submit\']').on('click', function () {
 		$("form[id*='form-']").submit();
@@ -82,9 +89,9 @@ $(document).ready(function () {
 		$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parent().addClass('menu-item-active');
 	}
 
-/* 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li > a').removeClass('menu-item-open');
-
-	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('ul').addClass('in'); */
+	/* 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li > a').removeClass('menu-item-open');
+	
+		$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('ul').addClass('in'); */
 
 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li').addClass('menu-item-open');
 
