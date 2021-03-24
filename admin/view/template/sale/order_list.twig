@@ -131,19 +131,19 @@
 												<div style="min-width: 120px;">
 													<div class="btn-group">
 														<a href="{{ order.view }}" data-toggle="tooltip" title="{{ button_view }}" class="btn btn-primary">
-															<i class="fa fa-eye"></i>
+															<span class="fa fa-eye"></span>
 														</a>
-														<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+														<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<span class="caret"></span>
 														</button>
 														<ul class="dropdown-menu dropdown-menu-right">
 															<li>
-																<a href="{{ order.edit }}">
+																<a href="{{ order.edit }}" class="dropdown-item">
 																	<span class="fas fa-pen"></span>
 																	{{ button_edit }}</a>
 															</li>
 															<li>
-																<a href="{{ order.order_id }}">
+																<a href="{{ order.order_id }}" class="dropdown-item">
 																	<span class="fas fa-trash"></span>
 																	{{ button_delete }}</a>
 															</li>
